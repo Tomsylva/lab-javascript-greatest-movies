@@ -67,6 +67,11 @@ function orderByYear(array){
   };
 
   return sortedByYear.sort(function(val1, val2){
+    if(val1.year === val2.year){
+      if(val1.title < val2.title){
+        return -1;
+      } else return 1;
+    }
     return val1.year - val2.year
   })
 };

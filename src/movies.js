@@ -40,12 +40,58 @@ function howManyMovies(array) {
     return +(totalSum/array.length).toFixed(2);
   }
 
-
 // Iteration 4: Drama movies - Get the average of Drama Movies
+
+function dramaMoviesRate(array){
+  let totalRate = 0;
+  let numberOfDramas = 0;
+
+  for (movie of array){
+    if (movie.genre === "drama"){
+      totalRate += movie.rate;
+      numberOfDramas ++;
+    };
+  };
+  if (numberOfDramas === 0){
+    return 0;
+  } else {
+    return +(totalRate/numberOfDramas).toFixed(2);
+  }
+}
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
+function orderByYear(array){
+  let sortedByYear = array.sort(function(val1, val2){
+     if(val1.year == val2.year){
+       return val1.title - val2.title
+     } else {
+     return val1.year - val2.year
+    }
+  })
+  return sortedByYear;
+};
+
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
+
+function orderAlphabetically(array){
+  let sortedTitles = []
+  let sortedArray = array.sort(function(val1, val2){
+    if(val1.title < val2.title){
+      return -1
+  } else if (val2.title < val1.title){
+      return 1
+  } else {
+      return 0
+  }
+  })
+
+  for (let movie of sortedArray){
+    sortedTitles.push(movie.title)
+  }
+
+  return sortedTitles.slice(0,20);
+}
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 

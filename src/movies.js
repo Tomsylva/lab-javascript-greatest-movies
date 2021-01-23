@@ -58,21 +58,6 @@ function dramaMoviesRate(array){
   } else return +(totalRate/dramasArray.length).toFixed(2);
 }
 
-// let totalRate = 0;
-  // let numberOfDramas = 0;
-  
-  // for (movie of array){
-  //   if (movie.genre === "drama"){
-  //     totalRate += movie.rate;
-  //     numberOfDramas ++;
-  //   };
-  // };
-  // if (numberOfDramas === 0){
-  //   return 0;
-  // } else {
-  //   return +(totalRate/numberOfDramas).toFixed(2);
-  // }
-
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
 function orderByYear(array){

@@ -90,5 +90,35 @@ function orderAlphabetically(array){
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
-// BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
+function turnHoursToMinutes(array){
+  let minutes = [];
+  for(let movie of array){
+    let hoursToMinutes = 0;
+    let minutesToNumber = 0;
+    let timeString = movie.duration;
+    if(timeString.length > 5){
+      hoursToMinutes = Number(timeString[0]) * 60;
+      //extract minutes and convert to number
+    } else if (timeString.length <= 5){
+      minutesToNumber = Number(timeString.slice(0,1))
+    }
+    return hoursToMinutes + minutesToNumber;
+  }
+  return minutes;
+};
 
+// BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
+function bestYearAvg(array){
+  if(array.length === 0){
+    return null;
+  }
+  let year = String(year);
+  let rate = String(rate);
+  for(let movie of array){
+    for(let i = 1900; i < 2022; i++){
+      
+
+    }
+  }
+  return `The best year was ${year} with an average rate of ${rate}`
+}

@@ -32,7 +32,7 @@ function howManyMovies(array) {
     };
     
     let totalSum =  array.reduce(function(acc,val){
-      if(val.rate === "" || val.rate == undefined){
+      if(!val.rate){
         return acc;
       } else {
         return acc + val.rate
@@ -96,13 +96,14 @@ function turnHoursToMinutes(array){
     let hoursToMinutes = 0;
     let minutesToNumber = 0;
     let timeString = movie.duration;
-    if(timeString.length > 5){
+    if(timeString.includes("h")){
       hoursToMinutes = Number(timeString[0]) * 60;
       //extract minutes and convert to number
-    } else if (timeString.length <= 5){
+    } else if (timeString.includes("mins")){
       minutesToNumber = Number(timeString.slice(0,1))
     }
-    return hoursToMinutes + minutesToNumber;
+    movie.duration = hoursToMinutes + minutesToNumber;
+    return movie.duration
   }
   return minutes;
 };
@@ -116,7 +117,10 @@ function bestYearAvg(array){
   let rate = String(rate);
   for(let movie of array){
     for(let i = 1900; i < 2022; i++){
-      
+
+//first filter for each year
+//for each year, call rates average
+//i++ on the year
 
     }
   }
